@@ -59,3 +59,11 @@ impl ops::Mul<vec3> for vec3 {
         return vec3{x: self.x * r.x, y: self.y * r.y, z: self.z * r.z}
     }
 }
+
+impl ops::Mul<f64> for vec3 {
+    type Output = vec3;
+
+    fn mul(self, f: f64) -> vec3 {
+        return vec3{x: self.x * f, y: self.y * f, z: self.z * f}
+    }
+}

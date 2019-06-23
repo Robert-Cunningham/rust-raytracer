@@ -5,10 +5,21 @@ use std::fmt;
 
 mod vec3;
 
+struct ray {
+    offset: vec3::vec3,
+    slope: vec3::vec3
+}
+
+impl ray {
+    fn parameterize(self, t: f64) -> vec3::vec3 {
+        return self.offset + self.slope * t;
+    }
+}
+
 fn main() {
     let x: &str = "Hello World!";
     println!("{}", x);
-    save_image(20, 10);
+    save_image(200, 100);
     println!("{}", vec3::vec3{x: 1.0, y: 2.0, z: 4.0} * vec3::vec3{x: 1.0, y: 4.0, z: 3.0})
 }
 
